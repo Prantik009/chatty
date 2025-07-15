@@ -17,7 +17,7 @@ export const userChatStore = create((set, get) => ({
       const res = await axiosInstance.get("/messages/users");
       set({ users: res.data });
     } catch (error) {
-      toast.error(error.response.data.messages);
+      toast.error(error.response.data.messages+"Can't get Users");
     } finally {
       set({ isUserLoading: false });
     }
@@ -34,7 +34,7 @@ export const userChatStore = create((set, get) => ({
       console.log(res);
       
     } catch (error) {
-      toast.error(error.response.data.messages);
+      toast.error(error.response.data.messages+"can't get messages");
     } finally {
       set({ isMessageLoading: false });
     }
