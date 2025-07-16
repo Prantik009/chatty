@@ -2,6 +2,13 @@
 
 Chatty is a real-time messaging application with a React frontend and Node.js backend, enabling seamless user communication with secure authentication and media sharing.
 
+## 📸 Screenshots
+
+![Main](/frontend/public/screenshots/main.png)
+![Register](/frontend/public/screenshots/register.png)
+![Profile](/frontend/public/screenshots/profile.png)
+![Settings](/frontend/public/screenshots/settings.png)
+
 ## About The Project
 ChatApp allows users to register, log in, and chat in real-time. It features a responsive UI styled with Tailwind CSS and DaisyUI, real-time messaging via Socket.IO, and media uploads powered by Cloudinary. The backend uses Express and MongoDB, with JWT for authentication.
 
