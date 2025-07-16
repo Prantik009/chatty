@@ -16,6 +16,8 @@ export const userChatStore = create((set, get) => ({
     try {
       const res = await axiosInstance.get("/messages/users");
       set({ users: res.data });
+      console.log(res.data);
+      
     } catch (error) {
       toast.error(error.response.data.messages+"Can't get Users");
     } finally {
@@ -31,7 +33,7 @@ export const userChatStore = create((set, get) => ({
       const res = await axiosInstance.get(`/messages/${userId}`);
       const allMessages = res.data.messages
       set({ messages: allMessages });
-      console.log(res);
+      console.log("messages:",res.data);
       
     } catch (error) {
       toast.error(error.response.data.messages+"can't get messages");

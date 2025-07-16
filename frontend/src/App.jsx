@@ -16,6 +16,7 @@ const App = () => {
   const {theme} = useThemeStore()
 
   console.log({onlineUsers});
+  console.log({authUser});
   
 
   // const navigate = useNavigate()
