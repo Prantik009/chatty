@@ -8,12 +8,10 @@ const BASE_URL= import.meta.env.MODE === "development" ?  "http://localhost:5001
 export const useAuthStore = create((set, get)=> ({
     authUser: null,
     
-    
-
     isCheckingAuth: true,
     checkAuth: async ()=> {
         try {
-            const res = await axiosInstance.get("/auth/check") // this gives a respose back to set authUser
+            const res = await axiosInstance.get("/auth/check-auth"); // this gives a respose back to set authUser
             set({authUser: res.data})
             get().connectSocket()
         } catch (error) {
@@ -43,7 +41,7 @@ export const useAuthStore = create((set, get)=> ({
     login: async (data) => {
         set({isLoggingIn: true})
         try{
-            const res = await axiosInstance.post("auth/login", data)
+            const res = await axiosInstance.post("/auth/login", data)
             set({authUser: res.data})
             toast.success("Logged in Successfully")
             get().connectSocket()
