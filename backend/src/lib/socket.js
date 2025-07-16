@@ -6,7 +6,7 @@ const app = express()
 const server = http.createServer(app)
 const io = new Server(server, {
     cors: {
-        origin: ["https://chatty-o3at.onrender.com"]
+        origin: process.env.NODE_ENV === "production" ? ["https://chatty-o3at.onrender.com"] : ["http://localhost:5173"]
     }
 })
 
